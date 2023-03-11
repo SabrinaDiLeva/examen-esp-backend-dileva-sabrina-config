@@ -5,9 +5,10 @@ spring:
     name: api-movie
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/digitalhouse-dev
-    username: usr-digitalhouse
-    password: pwd-digitalhouse
+    #url: jdbc:mysql://localhost:3306/digitalhouse-dev
+    url:jdbc:mysql://${MYSQL_HOST:localhost}:3306/backend
+    username: root
+    password: mysql123
   jpa:
     hibernate.ddl-auto: update
     generate-ddl: true
