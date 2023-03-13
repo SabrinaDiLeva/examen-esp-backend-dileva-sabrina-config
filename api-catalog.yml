@@ -3,14 +3,20 @@ server:
 spring:
   application:
     name: api-catalog
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/backend
+    username: root
+    password: mysql123
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
 
 info:
   application:
-     name: api-catalog
-    
+    name: api-catalog
+
 eureka:
-  healthcheck:
-    enabled: true
   instance:
     hostname: localhost
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
